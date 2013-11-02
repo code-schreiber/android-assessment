@@ -7,5 +7,7 @@
      <string name="latitude">latitude</string>
      <string name="longitude">longitude</string>
      <string name="go">go</string>
+     
+      <string name="no_connection">No Connection</string>
     
 </resources>

@@ -104,7 +104,7 @@ public class MainActivity extends Activity {
 		}
 
 		if(json == null || json.length() == 0){
-			Toast.makeText(this, "No Connection", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.no_connection, Toast.LENGTH_LONG).show();
 		}
 		else{
 			// Parse the data
@@ -127,7 +127,8 @@ public class MainActivity extends Activity {
 				filteredCars.add(car);
 			}
 		}
-		Toast.makeText(this, "Found "+ filteredCars.size()+" cars near you.", Toast.LENGTH_SHORT).show();
+		String toastText = "Found "+ filteredCars.size()+" cars near you.";
+		Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
 		return filteredCars;
 	}
 
