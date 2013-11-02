@@ -234,7 +234,7 @@ public class MainActivity extends Activity {
 	public class AsyncRequest extends AsyncTask<String, Integer, JSONObject> {
 		@Override
 		protected JSONObject doInBackground(String... params) {
-			return InternetHelper.getCars();
+			return HttpRequest.getCars();
 		}
 	}
 
