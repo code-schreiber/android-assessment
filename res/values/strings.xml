@@ -3,4 +3,9 @@
 
     <string name="app_name">MapsApp</string>
     <string name="action_settings">Settings</string>
+    
+     <string name="latitude">latitude</string>
+     <string name="longitude">longitude</string>
+     <string name="go">go</string>
+    
 </resources>

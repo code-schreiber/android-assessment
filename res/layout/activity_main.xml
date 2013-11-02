@@ -8,6 +8,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/latitude"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/latitude"
+            android:inputType="numberDecimal" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/longitude"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/longitude"
+            android:inputType="numberDecimal" >
+        </EditText>
+
+        <Button
+            android:id="@+id/go"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/go" />
+    </LinearLayout>
+
     <org.osmdroid.views.MapView
         android:id="@+id/mapview"
         android:layout_width="fill_parent"
@@ -15,6 +43,6 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="0px"
         android:padding="0px" >
-
     </org.osmdroid.views.MapView>
+
 </RelativeLayout>
