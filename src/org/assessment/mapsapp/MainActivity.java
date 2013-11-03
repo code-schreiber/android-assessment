@@ -72,13 +72,23 @@ public class MainActivity extends Activity {
 		goButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				hideKeyboard();
-				double lat = Double.parseDouble(latitude.getText().toString());
-				double lon = Double.parseDouble(longitude.getText().toString());
-				GeoPoint location = new GeoPoint(lat,lon);
-				updateLocation(location);
+				tryToSearch(latitude, longitude);
 			}
 		});
+	}
+
+	private void tryToSearch(EditText latitude, EditText longitude) {
+		String latitudeString = latitude.getText().toString();
+		String longitudeString = longitude.getText().toString();
+		if (latitudeString.length() == 0 || longitudeString.length() == 0) {
+			Toast.makeText(this, "Please enter latitude and longitude", Toast.LENGTH_SHORT).show();
+		} else {
+			hideKeyboard();
+			double lat = Double.parseDouble(latitudeString);
+			double lon = Double.parseDouble(longitudeString);
+			GeoPoint location = new GeoPoint(lat, lon);
+			updateLocation(location);
+		}
 	}
 
 	private void updateLocation(GeoPoint location){
