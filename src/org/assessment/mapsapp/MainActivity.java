@@ -130,15 +130,18 @@ public class MainActivity extends Activity {
 	 */
 	private List<Car> filterCarsByDistance(List<Car> cars, GeoPoint location, double searchRadiusKm) {
 		List<Car> filteredCars = new ArrayList<Car>();
-		double radiusInMeters = searchRadiusKm * 1000;
-		// If the car is within radius, add it
-		for (Car car : cars) {
-			if(location.distanceTo(car.position) < radiusInMeters){
-				filteredCars.add(car);
+		if(!cars.isEmpty()){
+			double radiusInMeters = searchRadiusKm * 1000;
+			// If the car is within radius, add it
+			for (Car car : cars) {
+				if(location.distanceTo(car.position) < radiusInMeters){
+					filteredCars.add(car);
+				}
 			}
+			String toastText = "Found "+ filteredCars.size()+" cars near you.";
+			Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
 		}
-		String toastText = "Found "+ filteredCars.size()+" cars near you.";
-		Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
+
 		return filteredCars;
 	}
 
